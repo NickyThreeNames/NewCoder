@@ -1,5 +1,33 @@
 import requests
 
+CPI_DATA_URL = 'http://research.stlouisfed.org/fred2/data/CPIAUCSL.txt'
+
+class CPIData(object):
+    """Abstraction of the CPI data provided by FRED.
+
+    This stores internally only onve value per year.
+
+    """
+
+
+    def __init__(self):
+        self.year_cpi = {}
+        self.last_year = None
+        self.first_year = None
+
+    def load_from_url(self, url, save_as_file=None):
+        """Loads data from a given url.
+
+        The downloaded file can also be saved into a location for later
+        re-use with teh "save_as_file" paramter specifying a filename.
+
+        After fetching the file this implemnetation uses load_from_file
+        internally.
+
+        """
+    def load_from_file(self, fp):
+
+
 def main():
 """This function handles the actual logic of this script."""
     
